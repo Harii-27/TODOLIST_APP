@@ -1,5 +1,3 @@
-// server.js (Backend - Express)
-
 const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
@@ -29,6 +27,11 @@ db.connect((err) => {
 
 // Routes
 
+// Route for root (optional, to handle GET /)
+app.get('/', (req, res) => {
+    res.send('Welcome to the Todo App API');
+});
+
 // Get all tasks
 app.get('/tasks', (req, res) => {
   db.query('SELECT * FROM tasks', (err, results) => {
@@ -54,11 +57,13 @@ app.post('/tasks', (req, res) => {
 app.put('/tasks/:id', (req, res) => {
   const { id } = req.params;
   const { completed } = req.body;
+
+  // Update the task completion status
   db.query('UPDATE tasks SET completed = ? WHERE id = ?', [completed, id], (err) => {
     if (err) {
       return res.status(500).json({ message: 'Failed to update task' });
     }
-    res.json({ id, completed });
+    res.json({ id, completed });  // Send back the updated task information
   });
 });
 

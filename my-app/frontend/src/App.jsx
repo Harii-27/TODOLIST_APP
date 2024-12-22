@@ -15,40 +15,38 @@ function App() {
     } catch (error) {
       console.error('There was an error fetching tasks:', error);
     }
-  };
+};
 
-  // Add a new task
-  const addTask = async () => {
-    if (taskTitle) {
-      try {
-        const response = await axios.post('http://localhost:3000/tasks', { title: taskTitle });
-        setTasks([...tasks, response.data]);
-        setTaskTitle('');
-      } catch (error) {
-        console.error('There was an error adding the task:', error);
-      }
-    }
-  };
-
-  // Toggle task completion
-  const toggleCompletion = async (id, completed) => {
+const addTask = async () => {
+  if (taskTitle) {
     try {
-      await axios.put(`http://localhost:3000/tasks/${id}`, { completed: !completed });
-      fetchTasks();
+      const response = await axios.post('http://localhost:3000/tasks', { title: taskTitle });
+      setTasks([...tasks, response.data]);
+      setTaskTitle('');
     } catch (error) {
-      console.error('There was an error updating the task:', error);
+      console.error('There was an error adding the task:', error);
     }
-  };
+  }
+};
 
-  // Delete a task
-  const deleteTask = async (id) => {
-    try {
-      await axios.delete(`http://localhost:3000/tasks/${id}`);
-      fetchTasks();
-    } catch (error) {
-      console.error('There was an error deleting the task:', error);
-    }
-  };
+const toggleCompletion = async (id, completed) => {
+  try {
+    await axios.put(`http://localhost:3000/tasks/${id}`, { completed: !completed });
+    fetchTasks();
+  } catch (error) {
+    console.error('There was an error updating the task:', error);
+  }
+};
+
+const deleteTask = async (id) => {
+  try {
+    await axios.delete(`http://localhost:3000/tasks/${id}`);
+    fetchTasks();
+  } catch (error) {
+    console.error('There was an error deleting the task:', error);
+  }
+};
+
 
   useEffect(() => {
     fetchTasks();
