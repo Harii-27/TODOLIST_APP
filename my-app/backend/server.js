@@ -54,18 +54,24 @@ app.post('/tasks', (req, res) => {
 });
 
 // Update a task (mark as completed)
+// Update task
 app.put('/tasks/:id', (req, res) => {
-  const { id } = req.params;
-  const { completed } = req.body;
-
-  // Update the task completion status
-  db.query('UPDATE tasks SET completed = ? WHERE id = ?', [completed, id], (err) => {
-    if (err) {
-      return res.status(500).json({ message: 'Failed to update task' });
-    }
-    res.json({ id, completed });  // Send back the updated task information
+    const { id } = req.params;  // Extract ID from the URL
+    const { title, completed } = req.body;  // Get the updated title and completion status from the request body
+    
+    console.log(`Updating task with ID: ${id}, Title: ${title}, Completed: ${completed}`);  // Debugging log
+    
+    db.query('UPDATE tasks SET title = ?, completed = ? WHERE id = ?', [title, completed, id], (err, result) => {
+      if (err) {
+        console.error('Failed to update task:', err);
+        return res.status(500).json({ message: 'Failed to update task' });
+      }
+      
+      // Send the updated task as the response
+      res.json({ id, title, completed });
+    });
   });
-});
+  
 
 // Delete a task
 app.delete('/tasks/:id', (req, res) => {
