@@ -147,12 +147,13 @@ function App() {
             <input
               type="checkbox"
               checked={task.completed}
-              onChange={() => toggleCompletion(task.id)} // Pass only task id to toggle completion
+              onChange={() => toggleCompletion(task.id)} 
             />
             <span
               className="text"
               style={{
                 textDecoration: task.completed ? "line-through" : "none",
+                color: task.completed ? "gray" : "black", // Change color to gray if completed
               }}
             >
               {task.title}

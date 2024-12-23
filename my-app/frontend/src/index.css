@@ -1,4 +1,12 @@
 /* Default Light Mode Styles */
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;  /* Disables scrolling */
+}
+
 body.light {
   background-color: #fff;
   color: black;
@@ -20,7 +28,12 @@ body.light {
 h1.light {
   color: darkslategray;
 }
-
+.to-do-list h1{
+  font-family: 'Montserrat', sans-serif; 
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+}
 /* Dark Mode Styles */
 body.dark {
   background-color: #252525;
@@ -46,7 +59,7 @@ h1.dark {
 
 /* Adjust the text of task box and modal */
 body.dark .text {
-  color: white; /* Keep text color white in dark mode */
+  color: white;
 }
 
 body.dark .modal {
@@ -96,16 +109,23 @@ li {
   font-size: 32px;
   font-weight: bold;
   padding: 10px;
-  border-bottom: 2px solid #6C63FF;
+  border-bottom: 2px solid rgba(108, 99, 255, 0.5); /* Adds 50% opacity to the border color */
   margin-bottom: 20px;
+  font-family: 'Roboto', sans-serif;
   display: flex;
   align-items: center;
-  width: 450px;
+  width: 540px;
   margin: 0 auto;
 }
 
+
 .text {
   flex: 1;
+  text-align: left;
+  font-weight: 400;
+  margin-left: 20px;
+  font-size: 28px;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
 /* Simplified styles for the edit and delete buttons (just icons) */
@@ -114,9 +134,9 @@ li {
   font-size: 20px;
   margin-left: 10px;
   padding: 0; /* Remove padding to bring icons closer */
-  background: transparent; /* Ensure no background */
+  background: none; /* Ensure no background */
   border: none; /* Remove border */
-  color: gray; /* Inherit text color */
+  color: rgba(211, 211, 211, 0.603); /* Inherit text color */
   cursor: pointer;
   display: inline-flex; /* Align buttons closely */
   align-items: center; /* Ensure vertical alignment of icons */
@@ -206,9 +226,10 @@ li {
 
 .search-box {
   padding: 8px 15px;
-  font-size: 1.4rem;
+  font-size: 18px;
   border: 2px solid #6C63FF;
-  width: 750px; 
+  width: 600px; 
+  border-radius: 6px;
   color: #6C63FF;
   opacity: 0.8;
 }
@@ -228,8 +249,8 @@ li {
   font-size: 18px;
   border-radius: 10px;
   background-color: #6C63FF;
-  width: auto;
-  margin-left: 10px;
+  width: 140px;
+  margin-left: 20px;
   height: 40px;
   color: white;
   font-weight: bold;
@@ -252,10 +273,13 @@ li {
 
 /* Dark/Light Mode Toggle Button */
 .theme-toggle {
-  font-size: 1.7rem;
+  font-size: 18px;
   cursor: pointer;
   background-color: #6C63FF; /* Set background color to #6C63FF */
   border: none;
+  position: relative;
+  left: 430px;
+  top:40px;
   padding: 10px;
   border-radius: 10px; /* Optional: Makes the button circular */
   transition: background-color 0.3s ease;
@@ -274,7 +298,7 @@ li {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.2rem;
+  font-size: 18px;
 }
 .empty-message {
   display: flex;
@@ -297,5 +321,35 @@ li {
   color: #666; /* Adjust color as needed */
 }
 
+/* Style for the checkbox */
+input[type="checkbox"] {
+  width: 25px;
+  height: 25px;
+  border: 2px solid #6C63FF; /* Blue border */
+  border-radius: 4px; /* Optional for rounded corners */
+  appearance: none; /* Remove default appearance */
+  -webkit-appearance: none; /* For Safari */
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Default tick appearance */
+input[type="checkbox"]:checked::before {
+  content: "✔"; /* Tick mark */
+  font-size: 20px;
+  color: #fff; /* Tick color */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Checkbox background when checked */
+input[type="checkbox"]:checked {
+  background-color: #6C63FF; /* Blue background */
+  border-color: #6C63FF; /* Darker blue border */
+}
 
 
