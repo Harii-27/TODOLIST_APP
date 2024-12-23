@@ -28,19 +28,19 @@ function App() {
 
     try {
       if (editingTaskId) {
-        
+
         await axios.put(`http://localhost:3000/tasks/${editingTaskId}`, {
           title: newTask,
         });
       } else {
-       
+
         const response = await axios.post("http://localhost:3000/tasks", {
           title: newTask,
         });
         setTasks((prevTasks) => [...prevTasks, response.data]);
       }
 
-   
+
       setNewTask("");
       setEditingTaskId(null);
       setIsModalOpen(false);
@@ -53,13 +53,13 @@ function App() {
 
   const toggleCompletion = async (id) => {
     const task = tasks.find((task) => task.id === id);
-    if (!task) return; 
+    if (!task) return;
 
     try {
       const updatedTask = { ...task, completed: !task.completed };
       // Update task completion status in the backend
       await axios.put(`http://localhost:3000/tasks/${id}`, updatedTask);
-   
+
       setTasks((prevTasks) =>
         prevTasks.map((task) =>
           task.id === id ? { ...task, completed: !task.completed } : task
@@ -113,19 +113,19 @@ function App() {
       document.body.classList.remove("dark");
     }
   }, [isDarkMode]);
-  
+
 
   return (
     <div className={`to-do-list ${isDarkMode ? "dark" : "light"}`}>
       <h1>TODO LIST</h1>
 
-  
+
       <button className="theme-toggle" onClick={toggleDarkMode}>
-        {isDarkMode ? <FaSun /> : <FaMoon />} 
+        {isDarkMode ? <FaSun /> : <FaMoon />}
       </button>
 
-      
-      <div className="header-controls">   
+
+      <div className="header-controls">
         <input
           type="text"
           className="search-box"
@@ -145,51 +145,51 @@ function App() {
 
       {searchQuery && filteredTasks.length === 0 && (
         <div className="empty-message">
-          <img src="/src/assets/search.png" alt="No Results" className="no-results-image" /> 
-          <p>Empty...</p> 
+          <img src="/src/assets/search.png" alt="No Results" className="no-results-image" />
+          <p>Empty...</p>
         </div>
       )}
 
-<ol>
-  {filteredTasks.map((task) => (
-    <li key={task.id}>
-      <input
-        type="checkbox"
-        checked={task.completed}
-        onChange={() => toggleCompletion(task.id)} 
-      />
-      <span
-        className="text"
-        style={{
-          textDecoration: task.completed ? "line-through" : "none",
-          color: task.completed ? "gray" : "black", 
-        }}
-      >
-        {task.title}
-      </span>
+      <ol>
+        {filteredTasks.map((task) => (
+          <li key={task.id}>
+            <input
+              type="checkbox"
+              checked={task.completed}
+              onChange={() => toggleCompletion(task.id)}
+            />
+            <span
+              className="text"
+              style={{
+                textDecoration: task.completed ? "line-through" : "none",
+                color: task.completed ? "gray" : "black",
+              }}
+            >
+              {task.title}
+            </span>
 
-     
-      {!task.completed && (
-        <>
-          <button
-            className="edit-button"
-            onClick={() => {
-              setNewTask(task.title);
-              setEditingTaskId(task.id);
-              setIsModalOpen(true);
-            }}
-          >
-            <FaPencilAlt />
-          </button>
 
-          <button className="delete-button" onClick={() => deleteTask(task.id)}>
-            <FaTrashAlt /> 
-          </button>
-        </>
-      )}
-    </li>
-  ))}
-</ol>
+            {!task.completed && (
+              <>
+                <button
+                  className="edit-button"
+                  onClick={() => {
+                    setNewTask(task.title);
+                    setEditingTaskId(task.id);
+                    setIsModalOpen(true);
+                  }}
+                >
+                  <FaPencilAlt />
+                </button>
+
+                <button className="delete-button" onClick={() => deleteTask(task.id)}>
+                  <FaTrashAlt />
+                </button>
+              </>
+            )}
+          </li>
+        ))}
+      </ol>
 
 
       <button
@@ -207,7 +207,7 @@ function App() {
       {isModalOpen && (
         <div className="modal-overlay">
           <div className="modal">
-          <h2 className="modal-header">{editingTaskId ? "Edit Task" : "NEW NOTE"}</h2>
+            <h2 className="modal-header">{editingTaskId ? "Edit Task" : "NEW NOTE"}</h2>
             <input
               type="text"
               placeholder="Input your note..."

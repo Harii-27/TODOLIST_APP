@@ -1,30 +1,31 @@
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
-  overflow: hidden;  
+  overflow: hidden;
 }
 
 body.light {
   background-color: #fff;
- 
+
 }
 
 .to-do-list.light {
   background-color: #fff;
- 
+
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
   justify-content: flex-start;
   height: 100vh;
-  padding: 20px; 
-  text-align: center; 
+  padding: 20px;
+  text-align: center;
 }
 
 
 
-.to-do-list h1{
-  font-family: 'Montserrat', sans-serif; 
+.to-do-list h1 {
+  font-family: 'Montserrat', sans-serif;
   font-size: 28px;
   font-weight: bold;
   position: relative;
@@ -32,6 +33,7 @@ body.light {
   text-align: center;
 
 }
+
 /* Dark Mode Styles */
 body.dark {
   background-color: #252525;
@@ -45,9 +47,9 @@ body.dark {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  height: 100vh; 
+  height: 100vh;
   padding: 20px;
-  text-align: center; 
+  text-align: center;
 }
 
 
@@ -55,7 +57,7 @@ body.dark {
 
 
 body.dark .modal {
-  background-color: #333; 
+  background-color: #333;
   color: white;
 }
 
@@ -76,7 +78,7 @@ button {
 }
 
 .add-button {
-  background-color:#6C63FF;
+  background-color: #6C63FF;
   position: fixed;
   bottom: 60px;
   right: 350px;
@@ -100,7 +102,7 @@ ol {
 li {
 
   padding: 10px;
-  border-bottom: 2px solid rgba(108, 99, 255, 0.5); 
+  border-bottom: 2px solid rgba(108, 99, 255, 0.5);
   margin-bottom: 20px;
   display: flex;
   align-items: center;
@@ -126,14 +128,15 @@ li {
 .delete-button {
   font-size: 16px;
   margin-left: 10px;
-  padding: 0; 
-  background: none; 
+  padding: 0;
+  background: none;
   border: none;
   color: #d1cfcf;
   cursor: pointer;
-  display: inline-flex; 
+  display: inline-flex;
   align-items: center;
 }
+
 .edit-button {
   margin-right: 5px;
 }
@@ -197,7 +200,7 @@ li {
 .modal-actions {
   display: flex;
   justify-content: space-between;
-  margin-top: auto; 
+  margin-top: auto;
 }
 
 .cancel-button {
@@ -227,10 +230,10 @@ li {
 
 .search-box-container {
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   align-items: center;
-  width: 100%; 
-  gap: 15px; 
+  width: 100%;
+  gap: 15px;
   margin-bottom: 20px;
 }
 
@@ -238,7 +241,7 @@ li {
   padding: 8px 15px;
   font-size: 18px;
   border: 2px solid #6C63FF;
-  width: 570px; 
+  width: 570px;
   border-radius: 6px;
   color: black;
   opacity: 0.8;
@@ -246,19 +249,21 @@ li {
   position: relative;
   left: 13px;
 }
+
 .search-icon {
   position: relative;
-  right: 20px; 
+  right: 20px;
   top: 15px;
   transform: translateY(-50%);
   color: rgba(64, 56, 221, 0.664);
-  font-size: 20px; 
+  font-size: 20px;
 }
 
 .search-box:focus {
-  outline: none; 
-  
+  outline: none;
+
 }
+
 .search-box::placeholder {
   color: #6C63FF;
   opacity: 0.4;
@@ -276,20 +281,20 @@ li {
   height: 40px;
   color: white;
   font-weight: bold;
-  border: none; 
+  border: none;
   outline: none;
 }
 
 
 .filter-container select option {
   background-color: #f0f0f0;
-  color: #6C63FF; 
-  border: none; 
+  color: #6C63FF;
+  border: none;
 }
 
 .filter-container select:focus {
-  border: none; 
-  outline: none; 
+  border: none;
+  outline: none;
 }
 
 
@@ -297,14 +302,14 @@ li {
 .theme-toggle {
   font-size: 18px;
   cursor: pointer;
-  background-color: #6C63FF; 
+  background-color: #6C63FF;
   border: none;
   position: relative;
   left: 415px;
-  top:40px;
+  top: 40px;
   outline: none;
   padding: 10px;
-  border-radius: 10px; 
+  border-radius: 10px;
   transition: background-color 0.3s ease;
 }
 
@@ -313,16 +318,19 @@ li {
 }
 
 .theme-toggle svg {
-  fill: #fff; 
+  fill: #fff;
 }
 
 
-.filter-container, .search-container, .theme-toggle {
+.filter-container,
+.search-container,
+.theme-toggle {
   display: inline-flex;
   justify-content: center;
   align-items: center;
   font-size: 18px;
 }
+
 .empty-message {
   display: flex;
   flex-direction: column;
@@ -333,25 +341,25 @@ li {
 }
 
 .no-results-image {
-  width: 250px; 
-  height: auto; 
-  margin-bottom: 10px; 
+  width: 250px;
+  height: auto;
+  margin-bottom: 10px;
 }
 
 .empty-message p {
-  margin-top: 0; 
+  margin-top: 0;
   font-size: 38px;
-  color: #666; 
+  color: #666;
 }
 
 
 input[type="checkbox"] {
   width: 25px;
   height: 25px;
-  border: 2px solid #6C63FF; 
-  border-radius: 4px; 
+  border: 2px solid #6C63FF;
+  border-radius: 4px;
   appearance: none;
-  -webkit-appearance: none; 
+  -webkit-appearance: none;
   display: inline-block;
   position: relative;
   right: 10px;
@@ -362,7 +370,7 @@ input[type="checkbox"] {
 
 
 input[type="checkbox"]:checked::before {
-  content: "✔"; 
+  content: "✔";
   font-size: 20px;
   color: #fff;
   position: absolute;
@@ -373,20 +381,20 @@ input[type="checkbox"]:checked::before {
 
 
 input[type="checkbox"]:checked {
-  background-color: #6C63FF; 
-  border-color: #6C63FF; 
+  background-color: #6C63FF;
+  border-color: #6C63FF;
 }
 
 
 
 body.dark .modal-overlay {
-  background: #2525250b; 
+  background: #2525250b;
 }
 
 body.dark .modal {
-  background: #252525; 
-  color: white; 
-  border-radius: 15px; 
+  background: #252525;
+  color: white;
+  border-radius: 15px;
   border: 2px solid #fff;
   transform: translateY(-80px);
 }
@@ -398,14 +406,14 @@ body.dark .modal-header {
 
 body.dark .modal input {
   background-color: #252525;
-  color: white; 
+  color: white;
   border: 2px solid #fff;
   font-size: 16px;
 
 }
 
 body.dark .modal input::placeholder {
-  color: #bbb; 
+  color: #bbb;
 }
 
 body.dark .modal-actions {
@@ -427,34 +435,35 @@ body.dark .apply-button {
 
 body.dark ol li {
   background-color: transparent;
- 
+
   border-bottom: 1px solid #6C63FF;
 
 }
 
 body.dark ol li .text {
-  color: white !important; 
+  color: white !important;
 }
 
 
-body.dark ol li input[type="checkbox"]:checked + .text {
-  text-decoration: line-through; 
-  color: #888 !important; 
+body.dark ol li input[type="checkbox"]:checked+.text {
+  text-decoration: line-through;
+  color: #888 !important;
 }
 
 
 body.dark .search-box {
-  background-color: transparent; 
-  color: white; 
-  border: 2px solid #fff; 
-  opacity: 0.9; 
+  background-color: transparent;
+  color: white;
+  border: 2px solid #fff;
+  opacity: 0.9;
 }
 
 body.dark .search-box::placeholder {
-  color: #aaa; 
+  color: #aaa;
 }
-body.dark .search-icon{
-color: #ffffff;
+
+body.dark .search-icon {
+  color: #ffffff;
 }
 
 /* Media Queries for Responsiveness */
@@ -483,14 +492,14 @@ color: #ffffff;
     font-size: 14px;
     width: 100%;
     position: relative;
-   right: 70px;
+    right: 70px;
   }
 
   .filter-container select {
     font-size: 14px;
     padding: 8px;
     position: relative;
-    left:240px;
+    left: 240px;
     bottom: 40px;
     width: 80px;
   }
@@ -518,9 +527,9 @@ color: #ffffff;
 
   .text {
     font-size: 24px;
-   position: relative;
-   left: 25px;
-   bottom: 27px;
+    position: relative;
+    left: 25px;
+    bottom: 27px;
   }
 
   .edit-button,
@@ -528,9 +537,10 @@ color: #ffffff;
     font-size: 18px;
     position: relative;
     left: 550px;
-    bottom: 60px;  
+    bottom: 60px;
   }
-  .edit-button{
+
+  .edit-button {
     position: relative;
     left: 520px;
     bottom: 42px;
@@ -551,14 +561,15 @@ color: #ffffff;
 
   .theme-toggle {
     font-size: 14px;
-   position: relative;
-   left: 310px;
-    top:35px;
+    position: relative;
+    left: 310px;
+    top: 35px;
   }
-  .search-icon{
-   
+
+  .search-icon {
+
     left: 230px;
-    top:-25px;
+    top: -25px;
   }
 }
 
@@ -586,42 +597,46 @@ color: #ffffff;
   .filter-container select {
     font-size: 14px;
     padding: 8px;
-   
-    left:80px;
+
+    left: 80px;
     bottom: 38px;
     width: 80px;
   }
 
   .text {
     font-size: 14px;
-  
-   left: 25px;
-   bottom: 20px;
+
+    left: 25px;
+    bottom: 20px;
   }
+
   .theme-toggle {
     font-size: 14px;
-   
-   left: 155px;
-    top:35px;
+
+    left: 155px;
+    top: 35px;
   }
-  .search-icon{
-   
+
+  .search-icon {
+
     left: 65px;
-    top:-25px;
+    top: -25px;
   }
 
   .edit-button,
   .delete-button {
     font-size: 14px;
-    
+
     left: 250px;
-    bottom: 45px; 
+    bottom: 45px;
   }
-  .edit-button{
-    
+
+  .edit-button {
+
     left: 220px;
     bottom: 30px;
   }
+
   .modal {
     width: 90%;
     padding: 15px;
@@ -637,5 +652,3 @@ color: #ffffff;
   }
 
 }
-
-
