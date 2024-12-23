@@ -457,5 +457,185 @@ body.dark .search-icon{
 color: #ffffff;
 }
 
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .to-do-list {
+    padding: 10px;
+  }
+
+  .to-do-list h1 {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+
+  .header-controls {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
+  }
+
+  .search-box-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .search-box {
+    font-size: 14px;
+    width: 100%;
+    position: relative;
+   right: 70px;
+  }
+
+  .filter-container select {
+    font-size: 14px;
+    padding: 8px;
+    position: relative;
+    left:240px;
+    bottom: 40px;
+    width: 80px;
+  }
+
+  .add-button {
+    bottom: 10px;
+    right: 10px;
+    font-size: 40px;
+    width: 50px;
+    height: 50px;
+  }
+
+  ol {
+    padding: 0;
+    width: 100%;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 15px;
+    height: auto;
+  }
+
+  .text {
+    font-size: 14px;
+   position: relative;
+   left: 25px;
+   bottom: 20px;
+  }
+
+  .edit-button,
+  .delete-button {
+    font-size: 14px;
+    position: relative;
+    left: 550px;
+    bottom: 30px;  
+  }
+  .edit-button{
+    position: relative;
+    left: 520px;
+    bottom: 16px;
+  }
+
+  .modal {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .modal-header {
+    font-size: 20px;
+  }
+
+  .modal input {
+    width: auto;
+  }
+
+  .theme-toggle {
+    font-size: 14px;
+   position: relative;
+   left: 310px;
+    top:35px;
+  }
+  .search-icon{
+   
+    left: 230px;
+    top:-25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .to-do-list h1 {
+    font-size: 22px;
+    margin-top: 10px;
+  }
+
+  .add-button {
+    font-size: 36px;
+    width: 45px;
+    height: 45px;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .search-box {
+    font-size: 14px;
+    width: auto;
+    right: 20px;
+    margin-right: 150px;
+  }
+
+  .filter-container select {
+    font-size: 14px;
+    padding: 8px;
+   
+    left:80px;
+    bottom: 38px;
+    width: 80px;
+  }
+
+  .text {
+    font-size: 14px;
+  
+   left: 25px;
+   bottom: 20px;
+  }
+  .theme-toggle {
+    font-size: 14px;
+   
+   left: 155px;
+    top:35px;
+  }
+  .search-icon{
+   
+    left: 65px;
+    top:-25px;
+  }
+
+  .edit-button,
+  .delete-button {
+    font-size: 14px;
+    
+    left: 250px;
+    bottom: 45px; 
+  }
+  .edit-button{
+    
+    left: 220px;
+    bottom: 30px;
+  }
+  .modal {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .modal-header {
+    font-size: 18px;
+  }
+
+  .modal input {
+    font-size: 14px;
+    width: auto;
+  }
+
+}
 
 
