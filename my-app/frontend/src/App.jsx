@@ -107,6 +107,15 @@ function App() {
     fetchTasks();
   }, []);
 
+  useEffect(() => {
+    if (isDarkMode) {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
+  }, [isDarkMode]);
+  
+
   return (
     <div className={`to-do-list ${isDarkMode ? "dark" : "light"}`}>
       <h1>TODO LIST</h1>

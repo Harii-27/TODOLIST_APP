@@ -9,12 +9,12 @@ html, body {
 
 body.light {
   background-color: #fff;
-  color: black;
+ 
 }
 
 .to-do-list.light {
   background-color: #fff;
-  color: black;
+ 
   display: flex;
   flex-direction: column;
   align-items: center; /* Center items horizontally */
@@ -25,13 +25,13 @@ body.light {
 }
 
 
-h1.light {
-  color: darkslategray;
-}
+
 .to-do-list h1{
   font-family: 'Montserrat', sans-serif; 
-  font-size: 32px;
+  font-size: 28px;
   font-weight: bold;
+  position: relative;
+  top: 30px;
   text-align: center;
 
 }
@@ -54,14 +54,8 @@ body.dark {
 }
 
 
-h1.dark {
-  color: lightgray;
-}
 
-/* Adjust the text of task box and modal */
-body.dark .text {
-  color: white;
-}
+
 
 body.dark .modal {
   background-color: #333; /* Dark background for modal */
@@ -89,7 +83,7 @@ button {
   background-color:#6C63FF;
   position: fixed;
   bottom: 60px;
-  right: 320px;
+  right: 350px;
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -172,7 +166,7 @@ li {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transform: translateY(-60px);
+  transform: translateY(-80px);
 }
 
 .modal-header {
@@ -193,7 +187,7 @@ li {
   color: #6C63FF;
   outline: none;
   border-radius: 7px;
-  font-size: 1.2rem;
+  font-size: 16px;
 }
 
 .modal input::placeholder {
@@ -247,10 +241,13 @@ li {
   padding: 8px 15px;
   font-size: 18px;
   border: 2px solid #6C63FF;
-  width: 620px; 
+  width: 570px; 
   border-radius: 6px;
   color: #6C63FF;
   opacity: 0.8;
+  font-size: 16px;
+  position: relative;
+  left: 13px;
 }
 .search-box:focus {
   outline: none; 
@@ -258,7 +255,7 @@ li {
 }
 .search-box::placeholder {
   color: #6C63FF;
-  opacity: 0.2;
+  opacity: 0.4;
 }
 
 
@@ -269,7 +266,7 @@ li {
   border-radius: 10px;
   background-color: #6C63FF;
   width: 140px;
-  margin-left: 16px;
+  margin-left: 25px;
   height: 40px;
   color: white;
   font-weight: bold;
@@ -297,8 +294,9 @@ li {
   background-color: #6C63FF; /* Set background color to #6C63FF */
   border: none;
   position: relative;
-  left: 435px;
+  left: 410px;
   top:40px;
+  outline: none;
   padding: 10px;
   border-radius: 10px; /* Optional: Makes the button circular */
   transition: background-color 0.3s ease;
@@ -367,10 +365,88 @@ input[type="checkbox"]:checked::before {
   transform: translate(-50%, -50%);
 }
 
-/* Checkbox background when checked */
+
 input[type="checkbox"]:checked {
-  background-color: #6C63FF; /* Blue background */
-  border-color: #6C63FF; /* Darker blue border */
+  background-color: #6C63FF; 
+  border-color: #6C63FF; 
 }
+
+
+/* Dark Mode Modal Styles */
+body.dark .modal-overlay {
+  background: #2525250b; 
+}
+
+body.dark .modal {
+  background: #252525; 
+  color: white; 
+  border-radius: 15px; 
+  border: 2px solid #fff;
+  transform: translateY(-80px);
+}
+
+body.dark .modal-header {
+  color: white;
+  font-weight: 550;
+}
+
+body.dark .modal input {
+  background-color: #252525;
+  color: white; 
+  border: 2px solid #fff;
+  font-size: 16px;
+
+}
+
+body.dark .modal input::placeholder {
+  color: #bbb; 
+}
+
+body.dark .modal-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+body.dark .cancel-button {
+  background-color: transparent;
+  color: #6C63FF;
+  border: 2px solid #6C63FF;
+}
+
+body.dark .apply-button {
+  background-color: #6C63FF;
+  color: white;
+  border: none;
+}
+/* Dark Mode Styles */
+body.dark ol li {
+  background-color: transparent; /* Dark background for each task */
+ 
+  border-bottom: 1px solid #6C63FF; /* Lighter border for separation */
+
+}
+
+body.dark ol li .text {
+  color: white !important; 
+}
+
+
+body.dark ol li input[type="checkbox"]:checked + .text {
+  text-decoration: line-through; 
+  color: #888 !important; 
+}
+
+/* Dark Mode Search Box */
+body.dark .search-box {
+  background-color: transparent; /* Dark background for the search box */
+  color: white; /* White text color */
+  border: 2px solid #fff; /* Border color for search box */
+  opacity: 0.9; /* Slightly less opacity for dark mode */
+}
+
+body.dark .search-box::placeholder {
+  color: #aaa; /* Lighter placeholder text */
+}
+
 
 
