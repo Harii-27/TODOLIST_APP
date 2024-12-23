@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-import { FaSun, FaMoon, FaEdit, FaTrash } from "react-icons/fa";
+import { FaSun, FaMoon, FaEdit, FaTrash, FaSearch } from "react-icons/fa";
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -126,7 +126,7 @@ function App() {
       </button>
 
       {/* Search and Filter Options */}
-      <div className="header-controls">
+      <div className="header-controls">   
         <input
           type="text"
           className="search-box"
@@ -134,6 +134,7 @@ function App() {
           value={searchQuery}
           onChange={handleSearchChange}
         />
+        <FaSearch className="search-icon" />
         <div className="filter-container">
           <select value={filter} onChange={handleFilterChange}>
             <option value="all">ALL</option>

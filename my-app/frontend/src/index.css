@@ -228,7 +228,7 @@ li {
 
 
 /* Search, Filter, and Theme Toggle in One Row */
-.search-container {
+.search-box-container {
   display: flex;
   justify-content: space-between; 
   align-items: center;
@@ -249,6 +249,15 @@ li {
   position: relative;
   left: 13px;
 }
+.search-icon {
+  position: relative;
+  right: 20px; /* Adjust position as needed */
+  top: 15px;
+  transform: translateY(-50%);
+  color: rgba(64, 56, 221, 0.664); /* Lighter color */
+  font-size: 20px; /* Adjust size of the icon */
+}
+
 .search-box:focus {
   outline: none; 
   
@@ -265,8 +274,8 @@ li {
   font-size: 18px;
   border-radius: 10px;
   background-color: #6C63FF;
-  width: 140px;
-  margin-left: 25px;
+  width: auto;
+  margin-left: 8px;
   height: 40px;
   color: white;
   font-weight: bold;
@@ -294,7 +303,7 @@ li {
   background-color: #6C63FF; /* Set background color to #6C63FF */
   border: none;
   position: relative;
-  left: 410px;
+  left: 415px;
   top:40px;
   outline: none;
   padding: 10px;
@@ -446,6 +455,9 @@ body.dark .search-box {
 
 body.dark .search-box::placeholder {
   color: #aaa; /* Lighter placeholder text */
+}
+body.dark .search-icon{
+color: #ffffff;
 }
 
 
