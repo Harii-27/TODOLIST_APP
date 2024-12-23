@@ -141,40 +141,47 @@ function App() {
         </div>
       )}
 
-      <ol>
-        {filteredTasks.map((task) => (
-          <li key={task.id}>
-            <input
-              type="checkbox"
-              checked={task.completed}
-              onChange={() => toggleCompletion(task.id)} 
-            />
-            <span
-              className="text"
-              style={{
-                textDecoration: task.completed ? "line-through" : "none",
-                color: task.completed ? "gray" : "black", // Change color to gray if completed
-              }}
-            >
-              {task.title}
-            </span>
+<ol>
+  {filteredTasks.map((task) => (
+    <li key={task.id}>
+      <input
+        type="checkbox"
+        checked={task.completed}
+        onChange={() => toggleCompletion(task.id)} 
+      />
+      <span
+        className="text"
+        style={{
+          textDecoration: task.completed ? "line-through" : "none",
+          color: task.completed ? "gray" : "black", // Change color to gray if completed
+        }}
+      >
+        {task.title}
+      </span>
 
-            <button
-              className="edit-button"
-              onClick={() => {
-                setNewTask(task.title);
-                setEditingTaskId(task.id);
-                setIsModalOpen(true);
-              }}
-            >
-              <FaEdit /> {/* Edit icon */}
-            </button>
-            <button className="delete-button" onClick={() => deleteTask(task.id)}>
-              <FaTrash /> {/* Trash icon */}
-            </button>
-          </li>
-        ))}
-      </ol>
+      {/* Conditionally render the edit and delete buttons only if the task is not completed */}
+      {!task.completed && (
+        <>
+          <button
+            className="edit-button"
+            onClick={() => {
+              setNewTask(task.title);
+              setEditingTaskId(task.id);
+              setIsModalOpen(true);
+            }}
+          >
+            <FaEdit /> {/* Edit icon */}
+          </button>
+
+          <button className="delete-button" onClick={() => deleteTask(task.id)}>
+            <FaTrash /> {/* Trash icon */}
+          </button>
+        </>
+      )}
+    </li>
+  ))}
+</ol>
+
 
       <button
         className="add-button"
