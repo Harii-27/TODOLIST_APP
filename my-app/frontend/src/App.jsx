@@ -127,7 +127,7 @@ function App() {
         />
         <div className="filter-container">
           <select value={filter} onChange={handleFilterChange}>
-            <option value="all">All</option>
+            <option value="all">ALL</option>
             <option value="completed">Completed</option>
             <option value="incomplete">Incomplete</option>
           </select>
@@ -191,7 +191,7 @@ function App() {
       {isModalOpen && (
         <div className="modal-overlay">
           <div className="modal">
-            <h2>{editingTaskId ? "Edit Task" : "New Note"}</h2>
+          <h2 className="modal-header">{editingTaskId ? "Edit Task" : "NEW NOTE"}</h2>
             <input
               type="text"
               placeholder="Input your note..."

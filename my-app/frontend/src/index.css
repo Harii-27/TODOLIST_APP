@@ -33,6 +33,7 @@ h1.light {
   font-size: 32px;
   font-weight: bold;
   text-align: center;
+
 }
 /* Dark Mode Styles */
 body.dark {
@@ -87,12 +88,13 @@ button {
 .add-button {
   background-color:#6C63FF;
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 60px;
+  right: 320px;
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  font-size: 2rem;
+  font-size: 60px;
+  font-weight: 100;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -106,15 +108,14 @@ ol {
 }
 
 li {
-  font-size: 32px;
-  font-weight: bold;
+
   padding: 10px;
   border-bottom: 2px solid rgba(108, 99, 255, 0.5); /* Adds 50% opacity to the border color */
   margin-bottom: 20px;
-  font-family: 'Roboto', sans-serif;
   display: flex;
   align-items: center;
   width: 540px;
+  height: 35px;
   margin: 0 auto;
 }
 
@@ -122,9 +123,11 @@ li {
 .text {
   flex: 1;
   text-align: left;
-  font-weight: 400;
+  font-weight: 500;
   margin-left: 20px;
-  font-size: 28px;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 550;
   transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
@@ -164,21 +167,36 @@ li {
   border-radius: 20px;
   text-align: center;
   width: 500px;
+  height: 280px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: translateY(-60px);
+}
+
+.modal-header {
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+  bottom: 20px;
+  color: #333;
+  font-size: 24px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .modal input {
-  width: 450px;
+  width: auto;
   padding: 10px;
-  margin: 20px 20px;
+  margin: 0 0 20px 0;
   border: 2px solid #6C63FF;
   color: #6C63FF;
   outline: none;
-  border-radius: 10px;
+  border-radius: 7px;
   font-size: 1.2rem;
 }
+
 .modal input::placeholder {
-  
   color: #6C63FF;
   opacity: 0.3;
   font-size: 1.2rem;
@@ -187,14 +205,15 @@ li {
 .modal-actions {
   display: flex;
   justify-content: space-between;
+  margin-top: auto; /* Pushes the buttons to the bottom */
 }
 
 .cancel-button {
-  background-color: transparent;
+  background-color: #fff;
   color: #6C63FF;
   padding: 10px 20px;
-  border-radius: 10px;
-  font-size: 1.2rem;
+  border-radius: 5px;
+  font-size: 18px;
   border: 2px solid #6C63FF;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -206,8 +225,8 @@ li {
   background-color: #6C63FF;
   color: white;
   padding: 10px 20px;
-  border-radius: 10px;
-  font-size: 1.2rem;
+  border-radius: 5px;
+  font-size: 18px;
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -228,7 +247,7 @@ li {
   padding: 8px 15px;
   font-size: 18px;
   border: 2px solid #6C63FF;
-  width: 600px; 
+  width: 620px; 
   border-radius: 6px;
   color: #6C63FF;
   opacity: 0.8;
@@ -250,7 +269,7 @@ li {
   border-radius: 10px;
   background-color: #6C63FF;
   width: 140px;
-  margin-left: 20px;
+  margin-left: 16px;
   height: 40px;
   color: white;
   font-weight: bold;
@@ -278,7 +297,7 @@ li {
   background-color: #6C63FF; /* Set background color to #6C63FF */
   border: none;
   position: relative;
-  left: 430px;
+  left: 435px;
   top:40px;
   padding: 10px;
   border-radius: 10px; /* Optional: Makes the button circular */
@@ -331,8 +350,10 @@ input[type="checkbox"] {
   -webkit-appearance: none; /* For Safari */
   display: inline-block;
   position: relative;
+  right: 10px;
   cursor: pointer;
   outline: none;
+
 }
 
 /* Default tick appearance */
