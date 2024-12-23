@@ -5,16 +5,16 @@ const cors = require('cors');
 const app = express();
 const port = 3000;
 
-// Middleware
+
 app.use(cors());
-app.use(express.json()); // For parsing JSON requests
+app.use(express.json()); 
 
 // MySQL connection
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: 'Hari@389962',  // Replace with your MySQL password
-  database: 'todo_app'  // Database name
+  password: 'Hari@389962',  
+  database: 'todo_app'  
 });
 
 db.connect((err) => {
@@ -27,7 +27,6 @@ db.connect((err) => {
 
 // Routes
 
-// Route for root (optional, to handle GET /)
 app.get('/', (req, res) => {
     res.send('Welcome to the Todo App API');
 });
@@ -53,13 +52,13 @@ app.post('/tasks', (req, res) => {
   });
 });
 
-// Update a task (mark as completed)
+
 // Update task
 app.put('/tasks/:id', (req, res) => {
-    const { id } = req.params;  // Extract ID from the URL
-    const { title, completed } = req.body;  // Get the updated title and completion status from the request body
+    const { id } = req.params;  
+    const { title, completed } = req.body; 
     
-    console.log(`Updating task with ID: ${id}, Title: ${title}, Completed: ${completed}`);  // Debugging log
+    console.log(`Updating task with ID: ${id}, Title: ${title}, Completed: ${completed}`);  
     
     db.query('UPDATE tasks SET title = ?, completed = ? WHERE id = ?', [title, completed, id], (err, result) => {
       if (err) {
@@ -67,7 +66,7 @@ app.put('/tasks/:id', (req, res) => {
         return res.status(500).json({ message: 'Failed to update task' });
       }
       
-      // Send the updated task as the response
+     
       res.json({ id, title, completed });
     });
   });

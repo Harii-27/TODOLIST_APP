@@ -1,10 +1,7 @@
-/* Default Light Mode Styles */
-
-
 html, body {
   height: 100%;
   margin: 0;
-  overflow: hidden;  /* Disables scrolling */
+  overflow: hidden;  
 }
 
 body.light {
@@ -17,11 +14,11 @@ body.light {
  
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center items horizontally */
-  justify-content: flex-start; /* Align items to the top */
-  height: 100vh; /* Ensure full viewport height */
-  padding: 20px; /* Add padding for spacing */
-  text-align: center; /* Center text */
+  align-items: center; 
+  justify-content: flex-start;
+  height: 100vh;
+  padding: 20px; 
+  text-align: center; 
 }
 
 
@@ -46,11 +43,11 @@ body.dark {
   color: white;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center items horizontally */
-  justify-content: flex-start; /* Align items to the top */
-  height: 100vh; /* Ensure full viewport height */
-  padding: 20px; /* Add padding for some spacing */
-  text-align: center; /* Center text */
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh; 
+  padding: 20px;
+  text-align: center; 
 }
 
 
@@ -58,15 +55,14 @@ body.dark {
 
 
 body.dark .modal {
-  background-color: #333; /* Dark background for modal */
-  color: white; /* White text in modal */
+  background-color: #333; 
+  color: white;
 }
 
 body.dark .modal-overlay {
-  background: rgba(0, 0, 0, 0.7); /* Darker overlay */
+  background: rgba(0, 0, 0, 0.7);
 }
 
-/* Other Elements (Unchanged) */
 button {
   font-size: 1.7rem;
   font-weight: bold;
@@ -104,7 +100,7 @@ ol {
 li {
 
   padding: 10px;
-  border-bottom: 2px solid rgba(108, 99, 255, 0.5); /* Adds 50% opacity to the border color */
+  border-bottom: 2px solid rgba(108, 99, 255, 0.5); 
   margin-bottom: 20px;
   display: flex;
   align-items: center;
@@ -125,23 +121,25 @@ li {
   transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
-/* Simplified styles for the edit and delete buttons (just icons) */
+
 .edit-button,
 .delete-button {
-  font-size: 20px;
+  font-size: 16px;
   margin-left: 10px;
-  padding: 0; /* Remove padding to bring icons closer */
-  background: none; /* Ensure no background */
-  border: none; /* Remove border */
-  color: rgba(211, 211, 211, 0.603); /* Inherit text color */
+  padding: 0; 
+  background: none; 
+  border: none;
+  color: #d1cfcf;
   cursor: pointer;
-  display: inline-flex; /* Align buttons closely */
-  align-items: center; /* Ensure vertical alignment of icons */
+  display: inline-flex; 
+  align-items: center;
+}
+.edit-button {
+  margin-right: 5px;
 }
 
 
 
-/* Modal Styling */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -184,7 +182,7 @@ li {
   padding: 10px;
   margin: 0 0 20px 0;
   border: 2px solid #6C63FF;
-  color: #6C63FF;
+  color: black;
   outline: none;
   border-radius: 7px;
   font-size: 16px;
@@ -199,7 +197,7 @@ li {
 .modal-actions {
   display: flex;
   justify-content: space-between;
-  margin-top: auto; /* Pushes the buttons to the bottom */
+  margin-top: auto; 
 }
 
 .cancel-button {
@@ -227,7 +225,6 @@ li {
 }
 
 
-/* Search, Filter, and Theme Toggle in One Row */
 .search-box-container {
   display: flex;
   justify-content: space-between; 
@@ -243,7 +240,7 @@ li {
   border: 2px solid #6C63FF;
   width: 570px; 
   border-radius: 6px;
-  color: #6C63FF;
+  color: black;
   opacity: 0.8;
   font-size: 16px;
   position: relative;
@@ -251,11 +248,11 @@ li {
 }
 .search-icon {
   position: relative;
-  right: 20px; /* Adjust position as needed */
+  right: 20px; 
   top: 15px;
   transform: translateY(-50%);
-  color: rgba(64, 56, 221, 0.664); /* Lighter color */
-  font-size: 20px; /* Adjust size of the icon */
+  color: rgba(64, 56, 221, 0.664);
+  font-size: 20px; 
 }
 
 .search-box:focus {
@@ -296,27 +293,27 @@ li {
 }
 
 
-/* Dark/Light Mode Toggle Button */
+
 .theme-toggle {
   font-size: 18px;
   cursor: pointer;
-  background-color: #6C63FF; /* Set background color to #6C63FF */
+  background-color: #6C63FF; 
   border: none;
   position: relative;
   left: 415px;
   top:40px;
   outline: none;
   padding: 10px;
-  border-radius: 10px; /* Optional: Makes the button circular */
+  border-radius: 10px; 
   transition: background-color 0.3s ease;
 }
 
 .theme-toggle:hover {
-  background-color: #5a54d7; /* Darker shade on hover */
+  background-color: #5a54d7;
 }
 
 .theme-toggle svg {
-  fill: #fff; /* Ensure the icon (SVG) is white */
+  fill: #fff; 
 }
 
 
@@ -336,25 +333,25 @@ li {
 }
 
 .no-results-image {
-  width: 250px; /* Adjust width as needed */
-  height: auto; /* Maintain aspect ratio */
-  margin-bottom: 10px; /* Space between the image and text */
+  width: 250px; 
+  height: auto; 
+  margin-bottom: 10px; 
 }
 
 .empty-message p {
-  margin-top: 0; /* No space above the text */
+  margin-top: 0; 
   font-size: 38px;
-  color: #666; /* Adjust color as needed */
+  color: #666; 
 }
 
-/* Style for the checkbox */
+
 input[type="checkbox"] {
   width: 25px;
   height: 25px;
-  border: 2px solid #6C63FF; /* Blue border */
-  border-radius: 4px; /* Optional for rounded corners */
-  appearance: none; /* Remove default appearance */
-  -webkit-appearance: none; /* For Safari */
+  border: 2px solid #6C63FF; 
+  border-radius: 4px; 
+  appearance: none;
+  -webkit-appearance: none; 
   display: inline-block;
   position: relative;
   right: 10px;
@@ -363,11 +360,11 @@ input[type="checkbox"] {
 
 }
 
-/* Default tick appearance */
+
 input[type="checkbox"]:checked::before {
-  content: "✔"; /* Tick mark */
+  content: "✔"; 
   font-size: 20px;
-  color: #fff; /* Tick color */
+  color: #fff;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -381,7 +378,7 @@ input[type="checkbox"]:checked {
 }
 
 
-/* Dark Mode Modal Styles */
+
 body.dark .modal-overlay {
   background: #2525250b; 
 }
@@ -427,11 +424,11 @@ body.dark .apply-button {
   color: white;
   border: none;
 }
-/* Dark Mode Styles */
+
 body.dark ol li {
-  background-color: transparent; /* Dark background for each task */
+  background-color: transparent;
  
-  border-bottom: 1px solid #6C63FF; /* Lighter border for separation */
+  border-bottom: 1px solid #6C63FF;
 
 }
 
@@ -445,16 +442,16 @@ body.dark ol li input[type="checkbox"]:checked + .text {
   color: #888 !important; 
 }
 
-/* Dark Mode Search Box */
+
 body.dark .search-box {
-  background-color: transparent; /* Dark background for the search box */
-  color: white; /* White text color */
-  border: 2px solid #fff; /* Border color for search box */
-  opacity: 0.9; /* Slightly less opacity for dark mode */
+  background-color: transparent; 
+  color: white; 
+  border: 2px solid #fff; 
+  opacity: 0.9; 
 }
 
 body.dark .search-box::placeholder {
-  color: #aaa; /* Lighter placeholder text */
+  color: #aaa; 
 }
 body.dark .search-icon{
 color: #ffffff;

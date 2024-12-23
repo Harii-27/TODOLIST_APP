@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-import { FaSun, FaMoon, FaEdit, FaTrash, FaSearch } from "react-icons/fa";
+import { FaSun, FaMoon, FaPencilAlt, FaTrashAlt, FaSearch } from "react-icons/fa";
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -28,19 +28,19 @@ function App() {
 
     try {
       if (editingTaskId) {
-        // Edit task
+        
         await axios.put(`http://localhost:3000/tasks/${editingTaskId}`, {
           title: newTask,
         });
       } else {
-        // Add new task
+       
         const response = await axios.post("http://localhost:3000/tasks", {
           title: newTask,
         });
         setTasks((prevTasks) => [...prevTasks, response.data]);
       }
 
-      // Reset state
+   
       setNewTask("");
       setEditingTaskId(null);
       setIsModalOpen(false);
@@ -50,16 +50,16 @@ function App() {
     }
   };
 
-  // Toggle task completion
+
   const toggleCompletion = async (id) => {
     const task = tasks.find((task) => task.id === id);
-    if (!task) return; // Return if the task is not found
+    if (!task) return; 
 
     try {
       const updatedTask = { ...task, completed: !task.completed };
       // Update task completion status in the backend
       await axios.put(`http://localhost:3000/tasks/${id}`, updatedTask);
-      // Update the task locally
+   
       setTasks((prevTasks) =>
         prevTasks.map((task) =>
           task.id === id ? { ...task, completed: !task.completed } : task
@@ -88,12 +88,11 @@ function App() {
     return matchesSearch;
   });
 
-  // Handle search input change
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
   };
 
-  // Handle filter change
+
   const handleFilterChange = (e) => {
     setFilter(e.target.value);
   };
@@ -120,12 +119,12 @@ function App() {
     <div className={`to-do-list ${isDarkMode ? "dark" : "light"}`}>
       <h1>TODO LIST</h1>
 
-      {/* Light/Dark Mode Toggle */}
+  
       <button className="theme-toggle" onClick={toggleDarkMode}>
-        {isDarkMode ? <FaSun /> : <FaMoon />} {/* Show Sun in dark mode, Moon in light mode */}
+        {isDarkMode ? <FaSun /> : <FaMoon />} 
       </button>
 
-      {/* Search and Filter Options */}
+      
       <div className="header-controls">   
         <input
           type="text"
@@ -146,8 +145,8 @@ function App() {
 
       {searchQuery && filteredTasks.length === 0 && (
         <div className="empty-message">
-          <img src="/src/assets/search.png" alt="No Results" className="no-results-image" /> {/* Image first */}
-          <p>Empty...</p> {/* Text below the image */}
+          <img src="/src/assets/search.png" alt="No Results" className="no-results-image" /> 
+          <p>Empty...</p> 
         </div>
       )}
 
@@ -163,13 +162,13 @@ function App() {
         className="text"
         style={{
           textDecoration: task.completed ? "line-through" : "none",
-          color: task.completed ? "gray" : "black", // Change color to gray if completed
+          color: task.completed ? "gray" : "black", 
         }}
       >
         {task.title}
       </span>
 
-      {/* Conditionally render the edit and delete buttons only if the task is not completed */}
+     
       {!task.completed && (
         <>
           <button
@@ -180,11 +179,11 @@ function App() {
               setIsModalOpen(true);
             }}
           >
-            <FaEdit /> {/* Edit icon */}
+            <FaPencilAlt />
           </button>
 
           <button className="delete-button" onClick={() => deleteTask(task.id)}>
-            <FaTrash /> {/* Trash icon */}
+            <FaTrashAlt /> 
           </button>
         </>
       )}
